@@ -1,0 +1,10 @@
+#flux HelmRepository fro intalling nginx controller
+
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: nginx
+  namespace: nginx
+spec:
+  url: oci://ghcr.io/nginx/charts
+  type: oci
