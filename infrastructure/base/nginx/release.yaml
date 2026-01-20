@@ -1,0 +1,18 @@
+#flux HelmRelase CRD for installing nginx controller helm chart
+
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelase
+metadata: 
+  name: nginx
+  namespace: nginx
+spec:
+  chart: 
+    spec:
+      chart: nginx-ingress
+      version: 2.4.x
+      interval: 5h # this is for checking for a new chart
+      sourceRef:
+        kind: HelmRepository
+        name: nginx
+  releaseName: nginx
+  interval: 1h # this is for drifting of the helm created resources
