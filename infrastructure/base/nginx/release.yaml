@@ -16,3 +16,7 @@ spec:
         name: nginx
   releaseName: nginx
   interval: 1h # this is for drifting of the helm created resources
+  type: NodePort
+  externalIPs:
+    - 192.168.1.11
+    - 192.168.1.12
